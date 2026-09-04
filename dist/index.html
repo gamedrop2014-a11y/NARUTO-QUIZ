@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loading-icon">⭐🍥⭐</div>
+            <h2>Loading the Ninja World...</h2>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app-container" class="hidden">
+        <header>
+            <div class="logo-area">📜 NARUTO QUIZ</div>
+            <div class="header-buttons">
+                <button class="nav-btn" onclick="goHome()">🏠 Home</button>
+                <button class="nav-btn" id="settings-btn" onclick="openSettings()">⚙️</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Home / Hero Screen -->
+            <div id="main-content" class="hero-card">
+                <div class="hero-icon">🍥</div>
+                <h2>Welcome to the Ninja Exams!</h2>
+                <p>Test your knowledge from Academy student to Hokage level.</p>
+                <button class="start-btn" onclick="startQuiz()">▶ PLAY</button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quiz-screen" class="quiz-card hidden">
+                <div class="quiz-header-info">
+                    <span id="question-counter">Level 1</span>
+                    <span id="shuriken-container">⭐ ⭐ ⭐</span>
+                </div>
+                <h3 id="question-text">Loading question...</h3>
+                
+                <div id="options-container">
+                    <!-- Options injected by JS -->
+                </div>
+
+                <!-- In-Game Notification Area -->
+                <div id="feedback-container" class="hidden">
+                    <!-- Feedback text and Next button injected by JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeSettings()">❌</span>
+            <h2>⚙️ Settings & Info</h2>
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Answer questions correctly to advance through 150+ levels.</li>
+                    <li>You have 3 Shurikens (lives). A wrong answer costs 1 Shuriken.</li>
+                    <li>If you leave, your progress is saved automatically!</li>
+                    <li>Questions scale from Easy (Genin) to Hard (Kage/Otsutsuki)!</li>
+                </ul>
+            </div>
+            <button class="start-btn restart-btn" onclick="resetGame()">Reset Game Data</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
