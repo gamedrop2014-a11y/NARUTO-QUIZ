@@ -1,0 +1,274 @@
+/* Basic Resets & Theme Colors */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b0f19;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.loader-content {
+    text-align: center;
+    background-color: #1a233a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2a3655;
+}
+
+.loading-icon {
+    font-size: 50px;
+    color: #ff4500;
+    margin-bottom: 15px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left-color: #ff4500;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* App Container Layout */
+#app-container {
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    background-color: #131b2e;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+header {
+    background-color: #1a233a;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff4500;
+}
+
+.logo-area {
+    font-weight: bold;
+    color: #ff4500;
+    font-size: 18px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn, .start-btn, .option-btn {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.nav-btn:hover {
+    color: #ff4500;
+}
+
+main, #quiz-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.hero-card {
+    text-align: center;
+    background-color: #1a233a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2a3655;
+    width: 100%;
+    max-width: 420px;
+}
+
+.hero-icon {
+    font-size: 50px;
+    color: #ff4500;
+    margin-bottom: 15px;
+}
+
+.start-btn {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.start-btn:hover {
+    background-color: #e03d00;
+}
+
+.quiz-card {
+    background-color: #1a233a;
+    padding: 25px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #2a3655;
+}
+
+.quiz-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #a0aec0;
+    border-bottom: 1px solid #2a3655;
+    padding-bottom: 10px;
+}
+
+#shuriken-container {
+    font-size: 14px;
+}
+
+#question-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #24304f;
+    color: white;
+    border: 1px solid #3b4d7c;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.option-btn:hover {
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
+
+/* In-Game Feedback UI */
+#feedback-container {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #131b2e;
+    border: 1px solid #2a3655;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#feedback-container h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Settings Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(11, 15, 25, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1a233a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #ff4500;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-btn:hover { transform: scale(1.1); }
+
+.modal-content h2 {
+    color: #ff4500;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.instructions ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #a0aec0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.restart-btn {
+    background-color: #f56565;
+    margin-top: 20px;
+}
+.restart-btn:hover { background-color: #c53030; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
